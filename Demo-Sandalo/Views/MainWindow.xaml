@@ -1,0 +1,30 @@
+﻿<Window x:Class="Demo_Sandalo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo_Sandalo" xmlns:views="clr-namespace:Demo_Sandalo.Views" 
+        xmlns:viewmodels="clr-namespace:Demo_Sandalo.ViewModels"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <viewmodels:MainViewModel x:Key="MainViewModel"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource MainViewModel}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0">
+            <views:CategorieView DataContext="{Binding CategorieVM}"/>
+            <views:SubCategorieView DataContext="{Binding SubCategorieVM}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="0">
+            <views:SandalenView  DataContext="{Binding SandalenVM}"/>
+        </StackPanel>
+    </Grid>
+</Window>
