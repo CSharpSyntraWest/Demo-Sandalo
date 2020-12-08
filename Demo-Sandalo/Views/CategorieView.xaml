@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Demo_Sandalo.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <TextBlock Text="Hier komt een listbox met categorieën"/>
+    <Grid >
+        <ComboBox ItemsSource="{Binding Categorieen}" SelectedItem="{Binding SelectedCategorie}" DisplayMemberPath="Naam"/>
     </Grid>
 </UserControl>

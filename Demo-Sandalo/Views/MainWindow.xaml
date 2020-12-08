@@ -18,12 +18,12 @@
         <Grid.RowDefinitions >
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Column="0" Grid.Row="0">
-            <views:CategorieView DataContext="{Binding CategorieVM}"/>
-            <views:SubCategorieView DataContext="{Binding SubCategorieVM}"/>
+        <StackPanel Margin="10" Grid.Column="0" Grid.Row="0">
+            <views:CategorieView DataContext="{Binding CategorieVM}" Margin="10"/>
+            <views:SubCategorieView DataContext="{Binding SubCategorieVM}"  Margin="10"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="0">
+        <StackPanel Margin="10" Grid.Column="1" Grid.Row="0">
             <views:SandalenView  DataContext="{Binding SandalenVM}"/>
         </StackPanel>
     </Grid>

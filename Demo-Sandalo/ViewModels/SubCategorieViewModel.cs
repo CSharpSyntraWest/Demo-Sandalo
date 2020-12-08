@@ -12,11 +12,18 @@ namespace Demo_Sandalo.ViewModels
     {
         private IDataService _dataService;
         private ObservableCollection<Subcategorie> _subcategorieen;
+        private Subcategorie _selectedSubcategorie;
 
         public SubCategorieViewModel(IDataService dataservice)
         {
             _dataService = dataservice;
             _subcategorieen = new ObservableCollection<Subcategorie>(_dataService.GeefAlleSubCategorieen());
+            if (_subcategorieen.Count > 0) _selectedSubcategorie = _subcategorieen[0];
+        }
+        public Subcategorie SelectedSubcategorie
+        {
+            get { return _selectedSubcategorie; }
+            set { OnPropertyChanged(ref _selectedSubcategorie, value); }
         }
         public ObservableCollection<Subcategorie> Subcategorieen
         {
